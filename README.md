@@ -1,4 +1,4 @@
-# Chat-Ayna
+# EchoChat
 
 Chat-Ayna is a real-time chat application built with React, Vite, and Strapi. It supports user authentication, multiple chat sessions, and real-time messaging using Socket.io. All data, including chat sessions and authentication, is stored in local storage.
 
@@ -11,9 +11,9 @@ Chat-Ayna is a real-time chat application built with React, Vite, and Strapi. It
 - **WebSockets**: The application uses WebSocket communication to facilitate instant messaging between the user and the server. When a client sends a message to the server, the server sends back the same message to the client.
 - **Responsiveness**: The web application is designed to be responsive and can adapt to different screen sizes, including desktop, tablet, and mobile devices.
 
-### What is Chat-Ayna?
+### What is EchoChat?
 
-Chat-Ayna is a real-time chat web application that facilitates instant messaging between the user and the server. The application is built using React+Vite for the frontend and Strapi for the backend. It supports user authentication, multiple chat sessions, and real-time messaging using WebSocket communication. The application is designed to be responsive and can run smoothly on various screen sizes and devices. All data, including chat sessions and authentication, is stored in local storage.
+EchoChat is a real-time chat web application that facilitates instant messaging between the user and the server. The application is built using React+Vite for the frontend and Strapi for the backend. It supports user authentication, multiple chat sessions, and real-time messaging using WebSocket communication. The application is designed to be responsive and can run smoothly on various screen sizes and devices. All data, including chat sessions and authentication, is stored in local storage.
 
 ### Solution Components
 
@@ -53,8 +53,8 @@ Chat-Ayna is a real-time chat web application that facilitates instant messaging
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-username/chat-ayna.git
-   cd chat-ayna
+   git clone https://github.com/your-username/EchoChat.git
+   cd EchoChat
    ```
 
 2. Install dependencies for the backend:
@@ -148,7 +148,7 @@ I used Render for backend deployment.
 ## Project Structure
 
 ```
-chat-ayna/
+EchoChat/
   ├── chat-backend/          # Strapi backend
   │   ├── config/            # Configuration files
   │   ├── src/               # Source files
