@@ -1,6 +1,6 @@
 # EchoChat
 
-Chat-Ayna is a real-time chat application built with React, Vite, and Strapi. It supports user authentication, multiple chat sessions, and real-time messaging using Socket.io. All data, including chat sessions and authentication, is stored in local storage.
+EchoChat is a real-time chat application built with React, Vite, and Strapi. It supports user authentication, multiple chat sessions, and real-time messaging using Socket.io. All data, including chat sessions and authentication, is stored in local storage.
 
 ## Project Overview
 
