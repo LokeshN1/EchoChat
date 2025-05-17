@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import { AuthContext } from "./AuthContext";
 import { ChatSessionProvider } from "./context/ChatSessionContext";
 import ChatRoom from "./components/ChatRoom";
+import DemoLanding from "./components/DemoLanding";
 
 function App() {
   const { user, setUser } = useContext(AuthContext);
@@ -28,7 +29,7 @@ function App() {
     <ChatSessionProvider>
       <Router>
         <Routes>
-          <Route path="/" element={user ? <Navigate to="/chat" /> : <Navigate to="/login" />} />
+          <Route path="/" element={user ? <Navigate to="/chat" /> : <DemoLanding />} />
           <Route path="/register" element={user ? <Navigate to="/chat" /> : <Register />} />
           <Route path="/login" element={!user ? <Login /> : <Navigate to="/chat" />} />
           <Route path="/chat" element={user ? <ChatRoom /> : <Navigate to="/login" />} />

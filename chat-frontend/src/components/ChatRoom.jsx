@@ -26,7 +26,10 @@ function ChatRoom() {
     const storedSessions = JSON.parse(localStorage.getItem(`sessions_${user.username}`)) || [];
     setSessions(storedSessions);
 
-    if (storedSessions.length > 0) {
+    // If this is a guest user and they have no sessions, create a default one
+    if (user.isGuest && storedSessions.length === 0) {
+      createDefaultSessionForGuest();
+    } else if (storedSessions.length > 0) {
       const lastSession = storedSessions[storedSessions.length - 1];
       setSessionId(lastSession.id);
       loadMessages(lastSession.id);
@@ -40,6 +43,27 @@ function ChatRoom() {
       socket.off("message");
     };
   }, [user]);
+
+  // Create a default session with welcome messages for guest users
+  const createDefaultSessionForGuest = () => {
+    const sessionId = `session-${uuidv4()}`;
+    const demoSession = { id: sessionId, name: "Demo Chat" };
+    
+    const updatedSessions = [demoSession];
+    setSessions(updatedSessions);
+    localStorage.setItem(`sessions_${user.username}`, JSON.stringify(updatedSessions));
+    setSessionId(sessionId);
+    
+    // Add welcome messages for demo users
+    const welcomeMessages = [
+      { user: "EchoChat Assistant", text: `Welcome to the demo chat, ${user.username}!` },
+      { user: "EchoChat Assistant", text: "This is a demo mode where you can try out the chat functionality. Feel free to start typing messages below." },
+      { user: "EchoChat Assistant", text: "You can also create new chat sessions using the 'New Session' button." }
+    ];
+    
+    setMessages(welcomeMessages);
+    localStorage.setItem(sessionId, JSON.stringify(welcomeMessages));
+  };
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });

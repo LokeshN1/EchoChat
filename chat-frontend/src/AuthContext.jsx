@@ -72,6 +72,20 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    // Guest login function for demo purposes
+    const guestLogin = () => {
+        const guestUser = {
+            id: 'guest-' + Date.now(),
+            username: 'Guest_' + Math.floor(Math.random() * 1000),
+            email: 'guest@example.com',
+            isGuest: true
+        };
+        
+        setUser(guestUser);
+        localStorage.setItem("user", JSON.stringify(guestUser));
+        return { success: true, message: "Guest login successful!" };
+    };
+
     const logout = () => {
         setUser(null);
         localStorage.removeItem("token");
@@ -79,7 +93,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, setUser, register, login, logout }}>
+        <AuthContext.Provider value={{ user, setUser, register, login, logout, guestLogin }}>
             {children}
         </AuthContext.Provider>
     );

@@ -7,7 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const { login } = useContext(AuthContext);
+  const { login, guestLogin } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,6 +22,10 @@ const Login = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleGuestLogin = () => {
+    guestLogin();
   };
 
   return (
@@ -62,6 +66,16 @@ const Login = () => {
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
+        
+        <div className="mt-4">
+          <button 
+            onClick={handleGuestLogin}
+            className="w-full bg-green-600 hover:bg-green-700 text-white p-3 rounded-md transition duration-300"
+          >
+            Continue as Guest
+          </button>
+        </div>
+        
         <div className="mt-4 text-center">
           <p className="text-gray-400">
             Don't have an account?{" "}
