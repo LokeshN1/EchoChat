@@ -10,15 +10,6 @@ A real-time chat application for seamless communication that repeats messages ba
 - Demo mode for visitors
 - Responsive UI for all devices
 
-## Screenshots
-
-### Demo Landing Page
-![EchoChat Landing Page](./src/assets/landing-page.png)
-*Landing page with direct demo access for portfolio viewers*
-
-### Chat Interface
-![EchoChat Interface](./src/assets/chat-interface.png)
-*Chat interface showing real-time message echoing*
 
 ## Getting Started
 
@@ -53,4 +44,3 @@ This project is deployed on Vercel. Add your VITE_BACKEND_URL to environment var
 
 ---
 
-*Note: To use your own screenshots, replace the placeholder URLs with the actual image URLs after uploading.*

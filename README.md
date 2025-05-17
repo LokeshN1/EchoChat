@@ -2,6 +2,16 @@
 
 EchoChat is a real-time chat application built with React, Vite, and Strapi. It supports user authentication, multiple chat sessions, and real-time messaging using Socket.io. All data, including chat sessions and authentication, is stored in local storage.
 
+## Screenshots
+
+### Demo Landing Page
+![EchoChat Landing Page](./chat-frontend/src/assets/landing-page.png)
+*Landing page with direct demo access for portfolio viewers*
+
+### Chat Interface
+![EchoChat Interface](./chat-frontend/src/assets/chat-interface.png)
+*Chat interface showing real-time message echoing*
+
 ## Project Overview
 
 ### Main Focus
